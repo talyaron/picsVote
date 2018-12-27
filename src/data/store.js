@@ -1,11 +1,5 @@
 var store = {
-    current: {
-        slide: 2
-    },
-    user: {},
-    groupicks: {
-        my: []
-    }
+    user: {}
 }
 
 module.exports = store; 

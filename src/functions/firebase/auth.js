@@ -1,27 +1,6 @@
 import m from 'mithril';
 import store from '../../data/store';
 
-import { getMygroupicks } from '../firebase/groupicks'
-import { constants } from 'http';
-
-
-
-// firebase.auth().signInAnonymously().catch(function (error) {
-//     // Handle Errors here.
-//     var errorCode = error.code;
-//     var errorMessage = error.message;
-//     console.error('On anonymous login:', errorMessage)
-
-// });
-
-// firebase.auth().signOut().then(function () {
-//     console.log('Sign-out successful.')
-// }).catch(function (error) {
-//     // An error happened.
-// });
-
-
-
 
 
 
@@ -42,7 +21,7 @@ firebase.auth().onAuthStateChanged(function (user) {
                 if (userDB.exists()) {
                     console.log('user exists')
                 } else {
-                    console.log('user don   t exists')
+                    console.log('user dont exists')
                     let userObj = {
                         displayName: user.displayName,
                         email: user.email,
@@ -53,6 +32,7 @@ firebase.auth().onAuthStateChanged(function (user) {
                     DB.child('users/' + user.uid).set(userObj);
 
                 }
+                m.route.set('/main');
             })
 
 

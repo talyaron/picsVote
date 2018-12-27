@@ -1,5 +1,5 @@
 import m from "mithril";
-import './Splash.css';
+import './Login.css';
 import { setTimeout } from "timers";
 
 const Splash = {
@@ -8,13 +8,13 @@ const Splash = {
             <div id='splashScreen' class='splashMain colorBckStrong'>
                 <div class='splashCenter'>
                     <div class='splashTitle colorTxtWhiteStrong'>
-                        Auscult
+                        דליב - בחירת תמונות
                     </div>
                     <div class='splashSubTitle colorTxtWhiteStrong'>
-                        Let's Listen to each other
+                        בואו נשפר
                     </div>
                     <div class='buttons buttonStart' onclick={() => { googleLogin() }}>
-                        START
+                        התחברות
                     </div>
                 </div>
             </div>

@@ -7,7 +7,7 @@ const Main = {
 
         return (
             <div class='mainPage'>
-                Auscult
+                בחירת תמנות
             </div>
         )
     }

@@ -3,13 +3,13 @@ const root = document.body;
 import './style.css';
 
 //Views
-import Splash from "./views/Splash/Splash";
+import Login from "./views/Login/Login";
 import Main from "./views/Main/Main";
 
 import './functions/firebase/auth';
 
 
-m.route(root, "/splash", {
-    "/splash": Splash,
+m.route(root, "/login", {
+    "/login": Login,
     "/main": Main
 })

@@ -1,7 +1,7 @@
 {
-  "name": "auscult",
+  "name": "picsVote",
   "version": "0.0.1",
-  "description": "Groupicks main module",
+  "description": "Help users find the best pics",
   "main": "index.js",
   "scripts": {
     "test": "test",
@@ -14,7 +14,7 @@
     "url": "git+https://github.com/talyaron/auscult.git"
   },
   "author": "Tal Yaron",
-  "license": "UNLICENSED",
+  "license": "GPL3.0",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
@@ -32,7 +32,7 @@
     "mithril": "^1.1.6"
   },
   "bugs": {
-    "url": "https://github.com/talyaron/groupicks/issues"
+    "url": "https://github.com/talyaron/picsVote/issues"
   },
-  "homepage": "https://github.com/talyaron/groupicks#readme"
+  "homepage": "https://github.com/talyaron/picsVote#readme"
 }
