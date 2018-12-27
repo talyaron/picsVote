@@ -1,0 +1,62 @@
+import m from "mithril";
+import './Splash.css';
+import { setTimeout } from "timers";
+
+const Splash = {
+    view: function (vnode) {
+        return (
+            <div id='splashScreen' class='splashMain colorBckStrong'>
+                <div class='splashCenter'>
+                    <div class='splashTitle colorTxtWhiteStrong'>
+                        Auscult
+                    </div>
+                    <div class='splashSubTitle colorTxtWhiteStrong'>
+                        Let's Listen to each other
+                    </div>
+                    <div class='buttons buttonStart' onclick={() => { googleLogin() }}>
+                        START
+                    </div>
+                </div>
+            </div>
+        )
+    }
+}
+
+
+function googleLogin() {
+    var provider = new firebase.auth.GoogleAuthProvider();
+
+
+    firebase.auth().signInWithPopup(provider).then(function (result) {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        var token = result.credential.accessToken;
+        // The signed-in user info.
+        var user = result.user;
+
+        flipPage();
+    }).catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+    });
+
+    provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+}
+
+
+var flipPage = function (vnode) {
+    var screen = document.getElementById(vnode.dom.id);
+    screen.classList.add("flipLeft");
+    setTimeout(() => {
+        console.log('route', '/main')
+        m.route.set('/main')
+    }, 500)
+
+}
+
+module.exports = Splash 
