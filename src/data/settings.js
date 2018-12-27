@@ -1,5 +1,4 @@
-var store = {
-    user: {},
+const settings = {
     authorization: {
         pages: {
             logged: ['main'],
@@ -7,5 +6,3 @@ var store = {
         }
     }
 }
-
-module.exports = store; 

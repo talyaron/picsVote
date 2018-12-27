@@ -10,10 +10,11 @@ firebase.auth().onAuthStateChanged(function (user) {
         console.log('user is login in')
         console.dir(user);
         var isAnonymous = user.isAnonymous;
+        !isAnonymous ? user.isLogged = true : user.isLogged = false;
         var uid = user.uid;
+        store.user = user;
         if (isAnonymous) {
             console.log('User is loged anonymously:', uid)
-            store.user = user;
         } else
 
             //log user to DB
@@ -32,15 +33,16 @@ firebase.auth().onAuthStateChanged(function (user) {
                     DB.child('users/' + user.uid).set(userObj);
 
                 }
-                m.route.set('/main');
-            })
 
+            })
+        m.route.set('/main');
 
     } else {
         console.log('User is signed out.')
         store.user = {};
-
+        m.route.set('/login');
         // m.route.set('/splash')
 
     }
 });
+

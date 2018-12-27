@@ -1,0 +1,42 @@
+.compareWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.compareWrapper>* {
+    width: 49%;
+    height: 49%;
+}
+
+.compareWrapper img {}
+
+.cardHorizLine {
+    background: #6969691f;
+    border-color: #ffc0cb00;
+}
+
+.compareScores {
+    background: var(--mainWeekBkg);
+    color: var(--textWhite);
+    text-align: center;
+    border-radius: 3px;
+    padding: 3px 0px;
+}
+
+details {
+    color: #0000ffc4;
+}
+
+.links {
+    text-align: center;
+    color: var(--textDarkSub);
+    background: #80808021;
+    user-select: none;
+    cursor: pointer;
+}
+
+.comment {
+    font-size: 12px;
+    color: var(--textDarkSimple);
+    margin-top: 10px;
+}

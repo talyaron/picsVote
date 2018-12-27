@@ -1,0 +1,28 @@
+.newPicturesWrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 550px;
+    margin: 55px auto;
+}
+
+.addPicturesPanel {
+    background: #8080801c;
+    display: table-cell;
+    vertical-align: middle;
+    margin: 8px 0px;
+    height: 200px;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.addPicturesPanel>span {
+    position: relative;
+    top: 80px;
+    font-size: 40px;
+    color: gray;
+}
+
+.addPicture {
+    display: none;
+}
