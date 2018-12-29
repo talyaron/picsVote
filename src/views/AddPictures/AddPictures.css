@@ -26,3 +26,28 @@
 .addPicture {
     display: none;
 }
+
+.imgOption {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.sendLink {
+    background: var(--mainMediumBkg);
+}
+
+#linkOutputWrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#linkOutput {
+    color: var(--mainStrongBkg);
+    border: 0px;
+    border-bottom: 1px solid #80808099;
+    text-align: center;
+    font-size: 1.2rem;
+    width: 100%;
+    height: 80px;
+}

@@ -2,9 +2,8 @@ import m from 'mithril';
 import store from '../../data/store';
 
 
-
-
 firebase.auth().onAuthStateChanged(function (user) {
+    console.log('route is', m.route.get())
 
     if (user) {
         console.log('user is login in')

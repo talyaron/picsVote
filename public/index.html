@@ -11,6 +11,7 @@
   <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-storage.js"></script>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
@@ -20,16 +21,16 @@
   <script>
     // Initialize Firebase
     var config = {
-      apiKey: "AIzaSyCH58Z284N7NXZ1U4EyQQnSZo9r7xSetH0",
-      authDomain: "delib22-38b16.firebaseapp.com",
-      databaseURL: "https://delib22-38b16.firebaseio.com",
-      projectId: "delib22-38b16",
-      storageBucket: "delib22-38b16.appspot.com",
-      messagingSenderId: "983920523675"
+      apiKey: "AIzaSyBW4Ty8cdaUGohEbBwXkoPGe_fh_yDz5zM",
+      authDomain: "delibtests.firebaseapp.com",
+      databaseURL: "https://delibtests.firebaseio.com",
+      projectId: "delibtests",
+      storageBucket: "delibtests.appspot.com",
+      messagingSenderId: "612739213308"
     };
 
     firebase.initializeApp(config);
-    var DB = firebase.database().ref();
+    var DB = firebase.database().ref('sites/compare');
   </script>
 
 

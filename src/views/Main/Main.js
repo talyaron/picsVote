@@ -34,7 +34,7 @@ const Main = {
                     <Card />
                     <Card />
                 </div>
-                <div class='fav accent'>
+                <div class='fav accent' onclick={() => { m.route.set('/add') }}>
                     <i class="material-icons">
                         add
                     </i>

@@ -1,11 +1,3 @@
-#loginButton {
-    position: relative;
-    left: 50%;
-    top: 0px;
-    transform: translate(-50%, 40%);
-    width: 100px;
-}
-
 .splashMain {
     width: 100%;
     height: 100%;
@@ -30,6 +22,17 @@
     font-size: 2rem;
     text-align: center;
     opacity: 0.75;
+}
+
+#loginButtonWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+#loginButton {
+    width: 100px;
 }
 
 .buttonStart {
