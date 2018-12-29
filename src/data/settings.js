@@ -1,8 +1,8 @@
 const settings = {
-    authorization: {
-        pages: {
-            logged: ['main'],
-            unlogged: []
-        }
+    auth: {
+        restricted: ['login', 'main', 'add'],
+        nonRestricted: ['intro', 'login']
     }
 }
+
+module.exports = settings;

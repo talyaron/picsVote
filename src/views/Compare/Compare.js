@@ -1,9 +1,9 @@
 import m from "mithril";
-import './Intro.css';
+import './Compare.css';
 import store from '../../data/store';
 
 
-const Intro = {
+const Compare = {
 
     view: function (vnode) {
 
@@ -30,4 +30,4 @@ const Intro = {
 }
 
 
-module.exports = Intro 
+module.exports = Compare 

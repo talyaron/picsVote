@@ -1,5 +1,6 @@
 import m from 'mithril';
 import store from '../../data/store';
+import settings from '../../data/settings';
 
 
 firebase.auth().onAuthStateChanged(function (user) {
@@ -34,7 +35,17 @@ firebase.auth().onAuthStateChanged(function (user) {
                 }
 
             })
-        m.route.set('/main');
+
+        //check if restrcted (after user is logged in)
+        let routeString = m.route.get();
+        routeString = routeString.slice(1, 5);
+        let restricted = settings.auth.restricted;
+        for (let i in restricted) {
+            if (restricted[i].search(routeString) > -1) {
+                m.route.set('/main');
+            }
+        }
+
 
     } else {
         console.log('User is signed out.')
