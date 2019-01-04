@@ -1,0 +1,52 @@
+{
+    "rules": {
+        "users": {
+            "$uid": {
+                ".write": "$uid === auth.uid",
+                ".read": "$uid === auth.uid"
+            }
+        },
+        "sites": {
+            "compare": {
+                "users": {
+                    "$user_id": {
+                        ".write": "$user_id === auth.uid",
+                        ".read": "true"
+                    }
+                },
+                "votes": {
+                    "$user_id": {
+                        ".write": "$user_id === auth.uid",
+                        ".read": "true"
+                    }
+                },
+                "votesIndex": {
+                    ".read": "true",
+                    ".write": "true"
+                },
+                "votersVote": {
+                    "$asker": {
+                        "$question": {
+                            "votes": {
+                                "$user_id": {
+                                    ".write": "$user_id === auth.uid",
+                                    ".read": "false"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "tests": {
+            ".write": true,
+            ".read": true
+        },
+        "smallApps": {
+            "livePerson": {
+                ".write": true,
+                ".read": true
+            }
+        }
+    }
+}

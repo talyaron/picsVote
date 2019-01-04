@@ -9,6 +9,9 @@
     width: 45%;
     height: 45%;
     margin: 0px 3px;
+    cursor: pointer;
+    user-select: none;
+    ;
 }
 
 .compareImg {
