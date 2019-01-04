@@ -1,0 +1,34 @@
+.compareImgsWrapper {
+    display: flex;
+    margin: 20px;
+    justify-content: space-between;
+}
+
+.compareImgDiv {
+    flex: 1;
+    width: 45%;
+    height: 45%;
+    margin: 0px 3px;
+}
+
+.compareImg {
+    width: 100%;
+    display: block;
+}
+
+.compareButton {
+    width: 100%;
+    text-align: center;
+    background: var(--mainMediumBkg);
+    border-radius: 0px 0px 50% 50%;
+}
+
+@media only screen and (max-width: 600px) {
+    .compareImgsWrapper {
+        flex-direction: column;
+    }
+    .compareImgDiv {
+        width: 100%;
+        margin: 3px 0px;
+    }
+}

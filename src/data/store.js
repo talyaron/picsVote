@@ -5,7 +5,9 @@ var store = {
             logged: ['main'],
             unlogged: []
         }
-    }
+    },
+    options: [],
+    askingUser: ''
 }
 
 module.exports = store; 

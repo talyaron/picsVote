@@ -14,8 +14,13 @@ firebase.auth().onAuthStateChanged(function (user) {
         var uid = user.uid;
         store.user = user;
         if (isAnonymous) {
-            console.log('User is loged anonymously:', uid)
-        } else
+            console.log('User is logged anonymously:', uid)
+
+
+            if (isRestricted()) {
+                m.route.set('/login')
+            }
+        } else {
 
             //log user to DB
             DB.child('users/' + user.uid).once('value', (userDB) => {
@@ -35,24 +40,37 @@ firebase.auth().onAuthStateChanged(function (user) {
                 }
 
             })
+            //check if restricted (after user is logged in)
 
-        //check if restrcted (after user is logged in)
-        let routeString = m.route.get();
-        routeString = routeString.slice(1, 5);
-        let restricted = settings.auth.restricted;
-        for (let i in restricted) {
-            if (restricted[i].search(routeString) > -1) {
-                m.route.set('/main');
+            if (isRestricted()) {
+                m.route.set('/main')
             }
         }
+
 
 
     } else {
         console.log('User is signed out.')
         store.user = {};
-        m.route.set('/login');
-        // m.route.set('/splash')
+        if (isRestricted()) {
+            m.route.set('/login');
+        }
+
+
 
     }
 });
+
+function isRestricted() {
+    let routeStringOrigin = m.route.get();
+    let routeString = routeStringOrigin.slice(1, 5);
+    let restricted = settings.auth.restricted;
+    for (let i in restricted) {
+        if (restricted[i].search(routeString) > -1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
 
