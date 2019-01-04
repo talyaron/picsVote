@@ -89,6 +89,10 @@ header {
     text-align: center;
 }
 
+.linkButton {
+    text-decoration: none;
+}
+
 /* bottom menu */
 
 .bottomMenu {
