@@ -8,13 +8,13 @@ const Card = {
         return (
             <div class='card'>
                 <div class='compareWrapper'>
-                    <img src='https://www.almanac.com/sites/default/files/styles/primary_image_in_article/public/birth_month_flowers-primary-1920x1280px_pixabay.jpg' />
-                    <img src='http://sashiageru.com/upload_img/0701104007.jpg' />
+                    <img src={vnode.attrs.image0} />
+                    <img src={vnode.attrs.image1} />
                 </div>
                 <hr class='cardHorizLine'></hr>
                 <div class='compareWrapper'>
-                    <div class='compareScores'>3.2</div>
-                    <div class='compareScores'>3.2</div>
+                    <div class='compareScores'>{vnode.attrs.option0}</div>
+                    <div class='compareScores'>{vnode.attrs.option1}</div>
                 </div>
                 <hr class='cardHorizLine'></hr>
                 <div class='compareWrapper'>
