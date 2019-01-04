@@ -18,11 +18,13 @@ const Main = {
     onbeforeupdate: vnode => {
         if (vnode.state.picsLoaded[0].loaded && vnode.state.picsLoaded[1].loaded) {
             vnode.state.goNext = true;
+            var currentDate = new Date().getTime();
             DB.child('votes/' + store.user.uid + '/' + vnode.state.sessionUid).set({
                 options: {
                     0: vnode.state.picsLoaded[0].imgSrc,
                     1: vnode.state.picsLoaded[1].imgSrc
                 },
+                time: currentDate
             })
             DB.child('users/' + store.user.uid + '/compares/' + vnode.state.sessionUid + '/votes').set(vnode.state.sessionUid)
         }

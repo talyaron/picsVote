@@ -43,7 +43,7 @@ firebase.auth().onAuthStateChanged(function (user) {
             //check if restricted (after user is logged in)
 
             if (isRestricted()) {
-                m.route.set('/main')
+                m.route.set('/main');
             }
         }
 

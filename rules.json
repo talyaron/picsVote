@@ -26,11 +26,12 @@
                 },
                 "votersVote": {
                     "$asker": {
+                        ".read": "$asker === auth.uid",
                         "$question": {
                             "votes": {
                                 "$user_id": {
                                     ".write": "$user_id === auth.uid",
-                                    ".read": "false"
+                                    ".read": "$asker === auth.uid"
                                 }
                             }
                         }
