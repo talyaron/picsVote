@@ -7,7 +7,7 @@ import { set } from 'lodash';
 
 const Main = {
     oninit: (vnode) => {
-        console.log('init', store.user.uid)
+
         vnode.state = {
             questions: {},
             questionsArray: []
@@ -83,7 +83,7 @@ function getVotes(vnode) {
                 questions[questionId] = { questionId, option0, option1 }
 
             })
-            console.log('votes')
+
             console.dir(questions)
             vnode.state.questions = questions;
             getImages(vnode, questions);

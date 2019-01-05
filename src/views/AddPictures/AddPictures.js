@@ -55,7 +55,7 @@ const Main = {
                 </div>
                 {vnode.state.goNext ?
                     <div id='linkOutputWrapper'>
-                        <textarea id='linkOutput'>localserver:votes/{vnode.state.sessionUid}</textarea>
+                        <textarea id='linkOutput'>{window.location.host}/#!/compare/{vnode.state.sessionUid}</textarea>
                     </div>
                     :
                     <div />
@@ -85,7 +85,7 @@ const Main = {
 // functions
 
 function addPicture(pictureNumber) {
-    console.log('add pic', pictureNumber);
+
     if (pictureNumber == 0) {
         document.getElementById('firstPicAdd').click();
     } else {
@@ -109,9 +109,9 @@ function getImage(event, sessionUid, picIndex, vnode) {
     task
         .then(snapshot => {
             snapshot.ref.getDownloadURL().then(function (downloadURL) {
-                console.log('File available at', downloadURL);
-                DB.child('users/' + store.user.uid + '/compares/' + sessionUid + '/' + picIndex).set({ imgSrc: downloadURL, id: uid })
 
+                DB.child('users/' + store.user.uid + '/compares/' + sessionUid + '/' + picIndex).set({ imgSrc: downloadURL, id: uid })
+                DB.child('votesIndex/' + sessionUid).set(store.user.uid);
                 vnode.state.picsLoaded[picIndex] = { loaded: true, imgSrc: downloadURL };
                 m.redraw();
 

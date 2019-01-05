@@ -42,7 +42,7 @@ const Compare = {
 
 function getImages(vnode) {
     DB.child('votesIndex/' + vnode.attrs.id).once('value').then(votesIndexDB => {
-        console.log(votesIndexDB.key, votesIndexDB.val());
+
         var voteUser = votesIndexDB.val();
         var voteUid = vnode.attrs.id;
 
