@@ -40,6 +40,7 @@ const Main = {
 
                             return (
                                 <Card
+                                    questionId={question.questionId}
                                     image0={question.imgs.option0}
                                     image1={question.imgs.option1}
                                     key={key}
@@ -69,7 +70,7 @@ function getVotes(vnode) {
 
             var option0 = 0, option1 = 0;
             questionsDB.forEach(questionDB => {
-                // vnode.state.questions.push({ questionId: questionDB.key, })
+
 
                 let optionSelections = questionDB.val().votes;
                 let questionId = questionDB.key;
@@ -77,14 +78,11 @@ function getVotes(vnode) {
                 for (let i in optionSelections) {
                     (optionSelections[i].option == 0) ? option0++ : option1++;
                 }
-                // set(vnode.state.questions, `[${questionId}].questionId`, questionId);
-                // set(vnode.state.questions, `[${questionId}].option0`, option0);
-                // set(vnode.state.questions, `[${questionId}].option1`, option1);
+
                 questions[questionId] = { questionId, option0, option1 }
 
             })
 
-            console.dir(questions)
             vnode.state.questions = questions;
             getImages(vnode, questions);
 

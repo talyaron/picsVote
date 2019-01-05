@@ -17,18 +17,7 @@ const Card = {
                     <div class='compareScores'>{vnode.attrs.option1}</div>
                 </div>
                 <hr class='cardHorizLine'></hr>
-                <div class='compareWrapper'>
-                    <div class='links'>
-                        <i class="material-icons">
-                            link
-                        </i>
-                    </div>
-                    <div class='links'>
-                        <i class="material-icons">
-                            call_made
-                        </i>
-                    </div>
-                </div>
+                <input class='linkInput' type='text' value={`${window.location.host}/picsVote/#!/compare/${vnode.attrs.questionId}`} />
                 <hr class='cardHorizLine'></hr>
                 <div class='compareWrapper'>
                     <details>

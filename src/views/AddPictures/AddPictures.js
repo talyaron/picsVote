@@ -55,7 +55,7 @@ const Main = {
                 </div>
                 {vnode.state.goNext ?
                     <div id='linkOutputWrapper'>
-                        <textarea id='linkOutput'>{window.location.host}/#!/compare/{vnode.state.sessionUid}</textarea>
+                        <textarea id='linkOutput'>{window.location.host}/picsVote/#!/compare/{vnode.state.sessionUid}</textarea>
                     </div>
                     :
                     <div />

@@ -27,6 +27,13 @@ details {
     color: #0000ffc4;
 }
 
+.linkInput {
+    border: none;
+    width: 100%;
+    text-align: center;
+    color: #6c6c6c;
+}
+
 .links {
     text-align: center;
     color: var(--textDarkSub);
