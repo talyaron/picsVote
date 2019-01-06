@@ -104,7 +104,7 @@ function getImages(vnode, questions) {
                 //     option0: questionDB.val().options[0],
                 //     option1: questionDB.val().options[1]
                 // })
-                console.log(JSON.stringify(vnode.state.questions))
+
                 if (questions.hasOwnProperty(questionId)) {
                     questions[questionId].imgs = {
                         option0: questionDB.val().options[0],

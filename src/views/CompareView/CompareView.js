@@ -17,11 +17,11 @@ const CompareView = {
         if (store.options.length > 0) {
             return (
                 <div class='compareImgsWrapper'>
-                    <div class='compareImgDiv' onclick={() => setImageSelection(0, vnode)}>
+                    <div class='compareImgDiv' onclick={() => setImageSelection(store.options[0].option, vnode)}>
                         <img class='compareImg' src={store.options[0].img}></img>
                         <div class='compareButton'>מי יפה יותר?</div>
                     </div>
-                    <div class='compareImgDiv' onclick={() => setImageSelection(1, vnode)}>
+                    <div class='compareImgDiv' onclick={() => setImageSelection(store.options[1].option, vnode)}>
                         <img class='compareImg' src={store.options[1].img}></img>
                         <div class='compareButton'>מי יפה יותר?</div>
                     </div>

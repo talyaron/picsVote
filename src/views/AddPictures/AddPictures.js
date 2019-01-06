@@ -12,7 +12,8 @@ const Main = {
         vnode.state = {
             sessionUid,
             picsLoaded: { 0: { loaded: false }, 1: { loaded: false } },
-            goNext: false
+            goNext: false,
+            link: ''
         }
     },
     onbeforeupdate: vnode => {
@@ -28,7 +29,10 @@ const Main = {
             })
             DB.child('users/' + store.user.uid + '/compares/' + vnode.state.sessionUid + '/votes').set(vnode.state.sessionUid)
         }
+        vnode.state.link = window.location.host + '/picsVote/?/compare/' + vnode.state.sessionUid;
+        console.log(vnode.state.link)
     },
+
     view: function (vnode) {
 
         return (
@@ -49,24 +53,22 @@ const Main = {
                         <input type='file' class='addPicture' id='secondPicAdd' onclick={() => { }} onchange={(event => { getImage(event, vnode.state.sessionUid, 1, vnode) })}></input>
                         {(vnode.state.picsLoaded[1].loaded) ?
                             <img src={vnode.state.picsLoaded[1].imgSrc} class='imgOption' /> :
-                            < span > הוסיפו תמונה</span>
+                            < span >הוסיפו תמונה</span>
                         }
                     </div>
                 </div>
                 {vnode.state.goNext ?
                     <div id='linkOutputWrapper'>
-                        <textarea id='linkOutput'>{window.location.host}/picsVote/#!/compare/{vnode.state.sessionUid}</textarea>
+                        <textarea id='linkOutput'>{vnode.state.link}</textarea>
                     </div>
                     :
                     <div />
                 }
                 <div class='bottomMenu'>
                     {(vnode.state.goNext) ?
-                        <div class='sendLink' onclick={() => { m.route.set('/send') }}>
-                            <i class="material-icons">
-                                link
-                            </i>
-                        </div>
+                        <a class='sendLink' onupdate={m.route.link} href={'https://wa.me/?text=' + vnode.state.link}>
+                            <img src='img/icons8-whatsapp.svg'></img>
+                        </a>
                         :
                         <div />
                     }

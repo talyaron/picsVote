@@ -13,6 +13,7 @@ import GoodyBye from './views/GoodBye/GoodBye';
 
 import './functions/firebase/auth';
 
+m.route.prefix('?');
 
 m.route(root, "/login", {
     "/login": Login,
