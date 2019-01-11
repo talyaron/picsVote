@@ -7,6 +7,10 @@ var store = {
         }
     },
     options: [],
+    selectedOption: {
+        option: '',
+        img: ''
+    },
     askingUser: ''
 }
 

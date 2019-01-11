@@ -1,0 +1,23 @@
+.feedbackConteiner {
+    display: block;
+}
+
+.explain {
+    display: block;
+    margin-top: 57px;
+    text-align: center;
+    padding: 10px;
+}
+
+.selectedOption {
+    display: block;
+    max-height: 30vh;
+    margin: auto;
+}
+
+.commentsInput {
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}

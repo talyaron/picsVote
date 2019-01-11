@@ -24,7 +24,11 @@ const Main = {
             questionsArray.push(vnode.state.questions[i]);
         }
 
+        //sort by date (new first)
+        questionsArray.sort((a, b) => { return b.time - a.time });
+
         vnode.state.questionsArray = questionsArray
+
 
     },
     view: function (vnode) {
@@ -100,16 +104,12 @@ function getImages(vnode, questions) {
             questionsDB.forEach(questionDB => {
                 let questionId = questionDB.key;
 
-                // set(vnode.state.questions, `[${questionId}].imgs`, {
-                //     option0: questionDB.val().options[0],
-                //     option1: questionDB.val().options[1]
-                // })
-
                 if (questions.hasOwnProperty(questionId)) {
                     questions[questionId].imgs = {
                         option0: questionDB.val().options[0],
                         option1: questionDB.val().options[1]
                     }
+                    questions[questionId].time = questionDB.val().time
                 }
             })
             vnode.state.questions = questions;

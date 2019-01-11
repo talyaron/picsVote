@@ -36,7 +36,12 @@ const CompareView = {
 function setImageSelection(imageSelection, vnode) {
 
     DB.child('votersVote/' + store.askingUser + '/' + vnode.attrs.id + '/votes/' + store.user.uid).update({ option: imageSelection });
-    m.route.set('/goodbye');
+    store.selectedOption = {
+        img: store.options[imageSelection].img,
+        option: imageSelection
+    }
+    console.log('route to ' + '/summery/' + vnode.attrs.id)
+    m.route.set('/summery/' + vnode.attrs.id);
 }
 
 // functions
