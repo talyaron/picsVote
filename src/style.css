@@ -56,6 +56,11 @@ header {
     color: white;
 }
 
+.disabled {
+    background: rgb(179, 178, 178);
+    color: white;
+}
+
 .buttons {
     border-radius: 10px;
     box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.404);

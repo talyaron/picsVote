@@ -22,6 +22,7 @@ const Card = {
                 <div class='compareWrapper'>
                     {(vnode.attrs.comments0.length > 0) ?
                         <details>
+                            <summary>הארות</summary>
                             {
                                 vnode.attrs.comments0.map((comment, key) => {
                                     return <div class='comment' key={key}>{comment}</div>
@@ -33,6 +34,7 @@ const Card = {
                     }
                     {(vnode.attrs.comments1.length > 0) ?
                         <details>
+                            <summary>הארות</summary>
                             {
 
                                 vnode.attrs.comments1.map((comment, key) => {

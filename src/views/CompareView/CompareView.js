@@ -8,7 +8,9 @@ import { userInfo } from "os";
 
 const CompareView = {
     oninit: vnode => {
-        if (store.options.length == 0) { m.route.set('/compare/' + vnode.attrs.id) }
+        if (store.options.length == 0) { m.route.set('/compare/' + vnode.attrs.id) };
+        document.title = 'דליב - השוואה'
+
     },
     onbeforeupdate: vnode => {
 
@@ -19,11 +21,11 @@ const CompareView = {
                 <div class='compareImgsWrapper'>
                     <div class='compareImgDiv' onclick={() => setImageSelection(0, vnode)}>
                         <img class='compareImg' src={store.options[0].img}></img>
-                        <div class='compareButton'>מי יפה יותר?</div>
+                        <div class='compareButton'>איזו תמונה יפה יותר?</div>
                     </div>
                     <div class='compareImgDiv' onclick={() => setImageSelection(1, vnode)}>
                         <img class='compareImg' src={store.options[1].img}></img>
-                        <div class='compareButton'>מי יפה יותר?</div>
+                        <div class='compareButton'>איזו תמונה יפה יותר?</div>
                     </div>
                 </div>
             )
@@ -35,7 +37,8 @@ const CompareView = {
 
 function setImageSelection(imageSelection, vnode) {
 
-    DB.child('votersVote/' + store.askingUser + '/' + vnode.attrs.id + '/votes/' + store.user.uid).update({ option: imageSelection });
+    DB.child(`votersVote/${store.askingUser}/${vnode.attrs.id}/votes/${store.user.uid}`).update({ option: imageSelection });
+
     store.selectedOption = {
         img: store.options[imageSelection].img,
         option: store.options[imageSelection].option

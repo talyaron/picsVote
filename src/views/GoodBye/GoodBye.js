@@ -2,7 +2,10 @@ import m from "mithril";
 import './GoodBye.css';
 
 const GoodyBye = {
-    view: function (vnode) {
+    oninit: vnode => {
+        document.title = 'דליב - להתראות'
+    },
+    view: vnode => {
         return (
             <div id='splashScreen' class='splashMain colorBckStrong' >
                 <div class='splashCenter'>

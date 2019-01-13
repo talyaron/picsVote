@@ -6,6 +6,9 @@ import store from '../../data/store';
 const CompareSummery = {
     oninit: vnode => {
         if (store.options.length == 0) { m.route.set('/compare/' + vnode.attrs.id) }
+
+        document.title = 'דליב - הערות'
+
     },
     onbeforeupdate: vnode => {
 

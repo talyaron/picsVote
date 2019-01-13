@@ -14,4 +14,6 @@ var store = {
     askingUser: ''
 }
 
+window.store = store;
+
 module.exports = store; 
