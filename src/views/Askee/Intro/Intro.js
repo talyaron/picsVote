@@ -1,6 +1,6 @@
 import m from "mithril";
 import './Intro.css';
-import store from '../../data/store';
+
 
 
 const Intro = {

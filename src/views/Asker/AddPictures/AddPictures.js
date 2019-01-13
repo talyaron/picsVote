@@ -1,7 +1,7 @@
 import m from "mithril";
 import './AddPictures.css';
-import store from '../../data/store';
-import { isPageRestricted, randomUid } from '../../functions/functions';
+import store from '../../../data/store';
+import { isPageRestricted, randomUid } from '../../../functions/functions';
 
 
 

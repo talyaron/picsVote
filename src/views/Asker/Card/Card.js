@@ -3,7 +3,7 @@ import './Card.css'
 
 const Card = {
 
-    view: function (vnode) {
+    view: vnode => {
 
         return (
             <div class='card'>

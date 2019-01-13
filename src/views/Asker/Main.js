@@ -1,5 +1,5 @@
 import m from "mithril";
-import Card from '../Common/Card/Card';
+import Card from './Card/Card';
 import store from '../../data/store';
 const isPageRestricted = require('../../functions/functions').isPageRestricted;
 import { get, set } from 'lodash';

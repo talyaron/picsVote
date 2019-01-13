@@ -1,6 +1,6 @@
 import m from "mithril";
 import './CompareSummery.css';
-import store from '../../data/store';
+import store from '../../../data/store';
 
 
 const CompareSummery = {
