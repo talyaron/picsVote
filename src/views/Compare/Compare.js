@@ -8,12 +8,14 @@ const Compare = {
         //get pictures and uplad to store
         getImages(vnode);
 
-        firebase.auth().signInAnonymously().catch(function (error) {
+        if (!store.user.hasOwnProperty('uid')) {
+            firebase.auth().signInAnonymously().catch(function (error) {
 
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            console.error(errorMessage)
-        });
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                console.error(errorMessage)
+            });
+        }
     },
     view: vnode => {
         return (
@@ -50,7 +52,8 @@ function getImages(vnode) {
         DB.child('votes').child(voteUser).child(voteUid).child('options').once('value').then(optionsDB => {
 
             let optionsArr = optionsDB.val();
-            //random
+            console.dir(optionsArr)
+            //set pictures in random order to store
             let randomStart = Math.floor(Math.random() * 2)
             if (randomStart == 0) {
                 store.options[0] = { img: optionsArr[0], option: 0 };

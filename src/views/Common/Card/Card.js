@@ -20,15 +20,29 @@ const Card = {
                 <input class='linkInput' type='text' value={`${window.location.host}/picsVote/?/compare/${vnode.attrs.questionId}`} />
                 <hr class='cardHorizLine'></hr>
                 <div class='compareWrapper'>
-                    <details>
-                        <div class='comment'>חג דחלכי דגחלכ לדגכדלחגכלדחחגיכ לדחגכ לדחג כידלחגכ דחלי כלדחגחגיכ לחדחגכי לחדחגכי לדחגיכ</div>
-                        <div class='comment'>חג דחלכי דגחלכ לדגכדלחגכלדחחגיכ לדחגכ לדחג כידלחגכ דחלי כלדחגחגיכ לחדחגכי לחדחגכי לדחגיכ</div>
-                        <div class='comment'>חג דחלכי דגחלכ לדגכדלחגכלדחחגיכ לדחגכ לדחג כידלחגכ דחלי כלדחגחגיכ לחדחגכי לחדחגכי לדחגיכ</div>
-                    </details>
-                    <details>
-                        <div class='comment'>חג דחלכי דגחלכ לדגכדלחגכלדחחגיכ לדחגכ לדחג כידלחגכ דחלי כלדחגחגיכ לחדחגכי לחדחגכי לדחגיכ</div>
-                    </details>
+                    {(vnode.attrs.comments0.length > 0) ?
+                        <details>
+                            {
+                                vnode.attrs.comments0.map((comment, key) => {
+                                    return <div class='comment' key={key}>{comment}</div>
+                                })
+                            }
+                        </details>
+                        :
+                        <div />
+                    }
+                    {(vnode.attrs.comments1.length > 0) ?
+                        <details>
+                            {
 
+                                vnode.attrs.comments1.map((comment, key) => {
+                                    return <div class='comment' key={key}>{comment}</div>
+                                })
+                            }
+                        </details>
+                        :
+                        <div />
+                    }
                 </div>
 
             </div>

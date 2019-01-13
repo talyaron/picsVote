@@ -2,7 +2,7 @@ import m from "mithril";
 import Card from '../Common/Card/Card';
 import store from '../../data/store';
 const isPageRestricted = require('../../functions/functions').isPageRestricted;
-import { set } from 'lodash';
+import { get, set } from 'lodash';
 
 
 const Main = {
@@ -26,7 +26,6 @@ const Main = {
 
         //sort by date (new first)
         questionsArray.sort((a, b) => { return b.time - a.time });
-
         vnode.state.questionsArray = questionsArray
 
 
@@ -50,6 +49,8 @@ const Main = {
                                     key={key}
                                     option0={question.option0}
                                     option1={question.option1}
+                                    comments0={question.comments0}
+                                    comments1={question.comments1}
                                 />
                             )
                         })
@@ -72,18 +73,29 @@ function getVotes(vnode) {
         .then(questionsDB => {
             var questions = {}
 
+            //for each question....
             var option0 = 0, option1 = 0;
             questionsDB.forEach(questionDB => {
 
+                //should make some push of comments....
 
                 let optionSelections = questionDB.val().votes;
+
                 let questionId = questionDB.key;
                 var option0 = 0, option1 = 0;
+                var comments0 = [], comments1 = []
+                //each commenter
                 for (let i in optionSelections) {
+
                     (optionSelections[i].option == 0) ? option0++ : option1++;
+                    let commentsTemp0 = get(optionSelections[i], `comments[${0}].comments`, undefined);
+                    if (commentsTemp0 != undefined) comments0.push(commentsTemp0);
+
+                    let commentsTemp1 = get(optionSelections[i], `comments[${1}].comments`, undefined);
+                    if (commentsTemp1 != undefined) comments1.push(commentsTemp1);
                 }
 
-                questions[questionId] = { questionId, option0, option1 }
+                questions[questionId] = { questionId, option0, option1, comments0, comments1 }
 
             })
 
@@ -92,7 +104,7 @@ function getVotes(vnode) {
 
         })
         .catch(error => {
-            console.erro(error)
+            console.error(error)
         })
 
 }
