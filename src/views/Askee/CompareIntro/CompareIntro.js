@@ -1,5 +1,5 @@
 import m from "mithril";
-import './Compare.css';
+import './CompareIntro.css';
 import store from '../../../data/store';
 
 
