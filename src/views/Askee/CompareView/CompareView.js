@@ -22,7 +22,7 @@ const CompareView = {
                         store.options.map((option, key) => {
 
                             return (
-                                <div class='compareImgDiv' key={key} onclick={() => setImageSelection(key, vnode)}>
+                                <div class='compareImgDiv' key={key} onclick={() => setImageSelection(store.options[key].option, vnode)}>
                                     <img class='compareImg' src={store.options[key].img}></img>
                                     <div class='compareButton'>איזו תמונה יפה יותר?</div>
                                 </div>

@@ -74,6 +74,8 @@ function getImages(vnode) {
                 store.options[0] = { img: optionsArr[1], option: 1 };
             }
 
+
+
             vnode.state.hasPictures = true;
             m.redraw();
 
