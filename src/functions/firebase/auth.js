@@ -2,6 +2,8 @@ import m from 'mithril';
 import store from '../../data/store';
 import settings from '../../data/settings';
 
+import DB from '../firebase/'
+
 
 firebase.auth().onAuthStateChanged(function (user) {
     console.log('route is', m.route.get())
