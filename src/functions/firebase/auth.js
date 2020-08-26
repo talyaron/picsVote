@@ -1,8 +1,11 @@
 import m from 'mithril';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+
 import store from '../../data/store';
 import settings from '../../data/settings';
 
-import DB from '../firebase/'
+import DB from './db'
 
 
 firebase.auth().onAuthStateChanged(function (user) {

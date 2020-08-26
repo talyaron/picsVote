@@ -21,7 +21,7 @@ module.exports = {
 
     },
     output: {
-        path: path.resolve(__dirname, 'public/picsVote'),
+        path: path.resolve(__dirname, 'public'),
         filename: 'dev.bundle.js'
     }
 };
