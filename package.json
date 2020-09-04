@@ -33,7 +33,7 @@
   "dependencies": {
     "firebase": "^7.19.0",
     "lodash": "^4.17.11",
-    "mithril": "^1.1.6"
+    "mithril": "^1.1.7"
   },
   "bugs": {
     "url": "https://github.com/talyaron/picsVote/issues"
