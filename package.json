@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "firebase": "^7.19.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "mithril": "^1.1.6"
   },
   "bugs": {
